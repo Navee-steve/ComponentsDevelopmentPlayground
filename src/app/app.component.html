@@ -1,0 +1,19 @@
+<div class = "customClass">
+    <h2>
+        <span class = "label label-info">
+            {{title}}
+        </span>
+    </h2>
+    <h5>
+        <span class = "label label-success">
+            RATING COMPONENT
+        </span>
+    </h5>
+    <app-rating [maxScore] = "5" (ratingChanged) = "onRatingChanged($event)"></app-rating>
+    <h5>
+        <span class = "label label-success">
+            STAR COMPONENT
+        </span>
+    </h5>
+    <app-star></app-star>
+</div>

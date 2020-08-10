@@ -1,0 +1,9 @@
+@import "../../node_modules/bootstrap/dist/css/bootstrap.css";
+
+.customClass {
+    padding-top: 5px;
+    padding-left: 20px;
+    border: 2px solid chocolate;
+    border-radius: 20px 20px 20px 20px;
+    background-color :bisque;
+}
