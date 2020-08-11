@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UpperCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  inputTyped : string ;
   score: number = 0;
 
   title = "CUSTOM - COMPONENT'S";
