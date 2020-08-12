@@ -1,7 +1,8 @@
 <span class = "rating-component">
     <i *ngFor = "let range of overAllRange ; 
                  let $index = index; "
-                 class = "glyphicon "
+                 class = "pi " 
+                 style="font-size: 2rem"
                  (click) = "onStarClicked($index)"
                  [ngClass] = "isMarked($index)"></i>
 </span>

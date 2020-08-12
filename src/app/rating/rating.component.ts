@@ -35,8 +35,8 @@ export class RatingComponent implements OnInit {
 
   public isMarked = (index) => {
     if(index <= this.initialMarked)
-      return "glyphicon-star";
+      return "pi-star";
     else
-      return "glyphicon-star-empty";
+      return "pi-star-o";
   }
 }
