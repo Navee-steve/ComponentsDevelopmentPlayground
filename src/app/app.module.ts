@@ -11,13 +11,15 @@ import { TitleCasePipe } from './title-case.pipe';
 //for primeNg usage
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {InputTextModule} from 'primeng/inputtext';
+import { LikeComponent } from './like/like.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StarComponent,
     RatingComponent,
-    TitleCasePipe
+    TitleCasePipe,
+    LikeComponent
   ],
   imports: [
     BrowserModule,

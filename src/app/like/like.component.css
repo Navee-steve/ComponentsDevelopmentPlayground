@@ -1,0 +1,7 @@
+.glyphicon {
+    cursor: pointer;
+    color : #ccc;
+}
+.isActive{
+    color :deeppink;
+}

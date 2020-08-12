@@ -9,7 +9,7 @@
             RATING COMPONENT
         </span>
     </h5>
-    <app-rating [maxScore] = "5" (ratingChanged) = "onRatingChanged($event)"></app-rating>
+    <app-rating [isMaxScore] = "5" (ratingChanged) = "onRatingChanged($event)"></app-rating>
     <h5>
         <span class = "label label-success">
             STAR COMPONENT
@@ -27,4 +27,9 @@
 <br>
 {{inputTyped | titleCase }}
 </div>
-<br>
+<div>
+    <app-like [isActive] = "likeComponentEnum.isLiked" 
+    [likesCount] = "likeComponentEnum.likesCount" 
+    (onClickLike) = "onlikeClicked($event)"> 
+    </app-like>
+</div>

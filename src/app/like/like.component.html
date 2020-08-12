@@ -1,0 +1,11 @@
+<div>
+    <span>
+        <i class = "glyphicon glyphicon-heart"
+        [class.isActive] = "isActive"
+        style="font-size: 2rem" 
+        (click) = "onLikeClicked()"></i>
+    </span>
+    <span>
+        <ng-container>{{ likesCount }}</ng-container>
+    </span>
+</div>

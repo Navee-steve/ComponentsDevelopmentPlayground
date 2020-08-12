@@ -8,8 +8,8 @@ import { NgModule , Component, OnInit, Input, Output, EventEmitter } from '@angu
 export class RatingComponent implements OnInit {
   
   //Defining the attributes for rating component
-  @Input() score;
-  @Input() maxScore = 5;
+  @Input('isRatingScore') score: number;
+  @Input('isMaxScore') maxScore: number = 5;
 
   //Defining the event for rating component
   @Output() ratingChanged = new EventEmitter();
@@ -27,10 +27,10 @@ export class RatingComponent implements OnInit {
     }
   }
 
-  public onStarClicked = (index) => {
+  public onRatingClicked = (index) => {
     this.initialMarked = this.initialMarked == index ? index-1 : index;
-    this.score = this.initialMarked + 1;
-    this.ratingChanged.next(this.score);
+    this.score = this.initialMarked + 1;  
+    this.ratingChanged.emit({ ratingScore : this.score });
   }
 
   public isMarked = (index) => {
@@ -39,4 +39,8 @@ export class RatingComponent implements OnInit {
     else
       return "pi-star-o";
   }
+}
+
+export interface RatingComponentEventArgs{
+  ratingScore : number;
 }

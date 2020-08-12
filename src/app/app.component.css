@@ -1,7 +1,7 @@
 .customClass {
     padding-top: 5px;
     padding-left: 20px;
-    border: 2px solid chocolate;
+    border: 2px solid maroon;
     border-radius: 20px 20px 20px 20px;
-    background-color :bisque;
+    background-color : rgb(252, 221, 252);
 }
