@@ -12,7 +12,7 @@ export class AppComponent {
 
   //set the values for like component attributes
   likeComponentEnum = {
-    likesCount : 0,
+    likesCount : 10,
     isLiked : true
   }
 

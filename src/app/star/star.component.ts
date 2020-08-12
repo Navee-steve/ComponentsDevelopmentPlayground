@@ -1,18 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-star',
   templateUrl: './star.component.html',
   styleUrls: ['./star.component.css']
 })
-export class StarComponent implements OnInit {
+export class StarComponent {
   isStarClicked : boolean;
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-  
   onClick(){
     this.isStarClicked = !this.isStarClicked;
   }
