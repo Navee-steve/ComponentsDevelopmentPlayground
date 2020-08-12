@@ -18,9 +18,13 @@
     <app-star></app-star>
 </div>
 <div>
-    <br><br>
-<input type ="text" [(ngModel)] = "inputTyped">
+<br>
+<span class="p-input-icon-right">
+    <i class="pi pi-spin pi-spinner"></i>
+    <input type="text" pInputText [(ngModel)]="inputTyped" class="p-inputtext-lg" placeholder="Enter Text here..."/>        
+</span> 
 <br>
 <br>
 {{inputTyped | titleCase }}
 </div>
+<br>

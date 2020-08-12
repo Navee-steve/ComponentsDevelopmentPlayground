@@ -8,6 +8,10 @@ import { StarComponent } from './star/star.component';
 import { RatingComponent } from './rating/rating.component';
 import { TitleCasePipe } from './title-case.pipe';
 
+//for primeNg usage
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {InputTextModule} from 'primeng/inputtext';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +22,9 @@ import { TitleCasePipe } from './title-case.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    InputTextModule
   ],
   providers: [],
   bootstrap: [AppComponent]
