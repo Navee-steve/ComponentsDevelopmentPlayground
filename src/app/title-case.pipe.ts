@@ -6,21 +6,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class TitleCasePipe implements PipeTransform {
 
   transform(value: string): unknown {
-  let prepositions = [
-    'of' ,
-    'in' , 
-    'the' , 
-    'for' , 
-    'to'
-  ];
-   
   if(!value){
    return null;
-  }  
-   let a = "The rise of the planet of the apes"
-   let b = "The Rise of the Planet of the apes"
+  } 
 
-   let words = value.split(' ');
+  let words = value.split(' ');
   for(var currentIndex = 0; currentIndex < words.length ; currentIndex ++ ){
     if( currentIndex > 0 && this.isPreposition(words[currentIndex])){
       words[currentIndex] = words[currentIndex].toLowerCase();
@@ -42,9 +32,9 @@ export class TitleCasePipe implements PipeTransform {
       'in' , 
       'the' , 
       'for' , 
-      'to'
+      'to' ,
+      'from'
     ];
-    console.log(word)
     return prepositions.includes(word.toLowerCase())
   }
 
