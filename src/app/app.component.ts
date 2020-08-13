@@ -30,4 +30,8 @@ export class AppComponent {
   onlikeClicked = (eventArgs : LikeComponentEmitArgs) => {
     //Events from likeComponent Click
   }
+
+  public onChipComponentClick = (event) => {
+    console.log(event);
+  }
 }

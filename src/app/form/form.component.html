@@ -1,0 +1,17 @@
+<form>
+    <div class="form-group">
+        <label for="firstName">FirstName</label>
+        <input id="firstName" required ngModel name = "firstName" 
+            #firstName = "ngModel" type="text" 
+            class="form-control input-width" 
+            (change) = "onInputChange(firstName)" >
+            <div *ngIf = "firstName.touched && !firstName.valid" class = "alert alert-danger input-width">The field is Required</div>
+    </div>
+    <div class="form-group">
+        <label for="comment">Comment Box</label>
+        <textarea id="comment" ngModel name = "comment" 
+            type="text" 
+            class="form-control input-width" cols="2" rows="3"></textarea>
+    </div>
+    <button mat-raised-button color="primary" (click) = "openDialog()">Submit</button>
+</form>

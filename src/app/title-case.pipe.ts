@@ -33,7 +33,8 @@ export class TitleCasePipe implements PipeTransform {
       'the' , 
       'for' , 
       'to' ,
-      'from'
+      'from',
+      'east'
     ];
     return prepositions.includes(word.toLowerCase())
   }
