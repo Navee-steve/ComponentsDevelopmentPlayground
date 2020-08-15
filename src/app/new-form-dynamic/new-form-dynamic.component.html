@@ -1,0 +1,15 @@
+<form>
+    <label >Dynamic added list on user type </label>
+    <input type="text" class = "form-control input-width"
+    (keyup.enter) = "addTopic(topic)" #topic/>
+    <div>
+        <!-- *FormArray inside FormGroup fetch must be like below  -->
+        <ul class="list-group">
+            <li 
+            *ngFor = "let topic of topics['controls']"
+            class="list-group-item" (click) = "removeElement(topic)">
+            {{ topic.value }}
+        </li>
+        </ul>        
+    </div>
+</form>

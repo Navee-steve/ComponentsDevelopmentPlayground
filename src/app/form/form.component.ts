@@ -33,4 +33,9 @@ export class FormComponent implements OnInit {
     .afterClosed()
     .subscribe(result => console.log(result));
   }
+
+  public onFormSubmit = (formValue) => {
+    console.log(formValue.value);
+    console.log(formValue);
+  }
 }

@@ -1,4 +1,4 @@
-<form>
+<form #templateFormVariable = "ngForm" (ngSubmit)= "onFormSubmit(templateFormVariable)">
     <div class="form-group">
         <label for="firstName">FirstName</label>
         <input id="firstName" required ngModel name = "firstName" 
@@ -13,5 +13,8 @@
             type="text" 
             class="form-control input-width" cols="2" rows="3"></textarea>
     </div>
-    <button mat-raised-button color="primary" (click) = "openDialog()">Submit</button>
+    <!-- ngIf isusedto hide the component-->
+    <!-- <button *ngIf = "firstName.valid" mat-raised-button color="primary" (click) = "openDialog()">Submit</button> -->
+    <!--property biding is used to disable the button -->
+    <button mat-raised-button color="primary" [disabled] = "!templateFormVariable.valid" (click) = "openDialog()">Submit</button>
 </form>

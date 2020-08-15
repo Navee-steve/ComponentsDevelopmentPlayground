@@ -8,3 +8,10 @@ body {
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.input-width {
+    width: 20%;
+}
+.form-control.ng-invalid.ng-touched {
+    border: 2px solid red;
+}

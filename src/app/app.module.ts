@@ -1,7 +1,7 @@
-import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +18,8 @@ import { MaterialModule } from './ui-module/material.module';
 import { ChipComponent } from './chip/chip.component';
 import { FormComponent } from './form/form.component';
 import { SimpleDialogComponent } from './simple-dialog/simple-dialog.component';
+import { NewFormDynamicComponent } from './new-form-dynamic/new-form-dynamic.component';
+import { PasswordResetFormComponent } from './password-reset-form/password-reset-form.component';
 
 @NgModule({
   declarations: [
@@ -28,17 +30,21 @@ import { SimpleDialogComponent } from './simple-dialog/simple-dialog.component';
     LikeComponent,
     ChipComponent,
     FormComponent,
-    SimpleDialogComponent
+    SimpleDialogComponent,
+    NewFormDynamicComponent,
+    PasswordResetFormComponent
   ],
   //Dynamic components must be registered here to avoid compilation error but for our version it works fine
   entryComponents : [
-    SimpleDialogComponent
+    SimpleDialogComponent,
+    NewFormDynamicComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
 
     //Adding Prime Ng UI module
     PrimeModule,
