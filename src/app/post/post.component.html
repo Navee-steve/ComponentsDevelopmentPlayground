@@ -1,0 +1,19 @@
+<div>
+    <label >Dynamic added list on user type </label>
+    <input type="text" class = "form-control input-width"
+    (keyup.enter) = "createPost(inputValue)" #inputValue/>
+    <br>
+    <ul class="list-group">
+        <li 
+        *ngFor = "let post of posts"
+        class="list-group-item">
+        <button 
+        class = "btn btn-default btn-sm"
+        (click) = "updatePost(post)">Update</button>
+        {{ post.name }}
+        <button 
+        class = "btn btn-danger btn-sm"
+        (click) = "deletePost(post)">Delete</button>
+        </li>
+    </ul>    
+</div>

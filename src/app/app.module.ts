@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,8 @@ import { FormComponent } from './form/form.component';
 import { SimpleDialogComponent } from './simple-dialog/simple-dialog.component';
 import { NewFormDynamicComponent } from './new-form-dynamic/new-form-dynamic.component';
 import { PasswordResetFormComponent } from './password-reset-form/password-reset-form.component';
+import { PostComponent } from './post/post.component';
+import { PostService } from './services/post.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,8 @@ import { PasswordResetFormComponent } from './password-reset-form/password-reset
     FormComponent,
     SimpleDialogComponent,
     NewFormDynamicComponent,
-    PasswordResetFormComponent
+    PasswordResetFormComponent,
+    PostComponent
   ],
   //Dynamic components must be registered here to avoid compilation error but for our version it works fine
   entryComponents : [
@@ -45,6 +49,7 @@ import { PasswordResetFormComponent } from './password-reset-form/password-reset
     FormsModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    HttpClientModule,
 
     //Adding Prime Ng UI module
     PrimeModule,
@@ -52,7 +57,9 @@ import { PasswordResetFormComponent } from './password-reset-form/password-reset
     //Adding Material Design Module
     MaterialModule
   ],
-  providers: [],
+  providers: [
+    PostService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
