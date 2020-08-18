@@ -1,3 +1,6 @@
+import { GitHubFollowersService } from './services/git-hub-followers.service';
+import { AppErrorHandler } from './common/app-error-handler';
+import { ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -23,6 +26,7 @@ import { NewFormDynamicComponent } from './new-form-dynamic/new-form-dynamic.com
 import { PasswordResetFormComponent } from './password-reset-form/password-reset-form.component';
 import { PostComponent } from './post/post.component';
 import { PostService } from './services/post.service';
+import { GitHubFollowersComponent } from './git-hub-followers/git-hub-followers.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,8 @@ import { PostService } from './services/post.service';
     SimpleDialogComponent,
     NewFormDynamicComponent,
     PasswordResetFormComponent,
-    PostComponent
+    PostComponent,
+    GitHubFollowersComponent
   ],
   //Dynamic components must be registered here to avoid compilation error but for our version it works fine
   entryComponents : [
@@ -58,7 +63,9 @@ import { PostService } from './services/post.service';
     MaterialModule
   ],
   providers: [
-    PostService
+    PostService,
+    GitHubFollowersService,
+    { provide: ErrorHandler , useClass : AppErrorHandler }
   ],
   bootstrap: [AppComponent]
 })

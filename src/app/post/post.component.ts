@@ -1,3 +1,7 @@
+import { throwError } from 'rxjs';
+import { BadInputError } from './../common/bad-input-error';
+import { NotFoundError } from './../common/not-found-error';
+import { AppError } from './../common/app-error';
 import { Component, OnInit } from '@angular/core';
 import { PostService } from './../services/post.service';
 
@@ -23,10 +27,8 @@ export class PostComponent implements OnInit {
    * ngOnInit get the details from localhost: 8080 server with mapping 'details'
    */
   ngOnInit() {
-    this.postService.getPosts()
-      .subscribe(PartialObserver =>{
-      this.posts = PartialObserver;
-    })
+    this.postService.getAll()
+      .subscribe(posts => this.posts = posts);
   }
 
   /**
@@ -35,13 +37,23 @@ export class PostComponent implements OnInit {
    * @param input 
    */
   createPost(input : HTMLInputElement) {
-    let post = { id : input.value };
+    let post = { email : input.value };
+    this.posts.splice(0,0,post);
+
     input.value = "";
-    this.postService.createPosts(post)
-    .subscribe(data => {
-      post['idValue'] = data;
-      this.posts.splice(0,0,post);
-    })
+    this.postService.create(post)
+    .subscribe(
+      posts => {
+        console.log(posts);
+      }, 
+      (error: AppError) => {
+        //This is used to Update the UI if any error occurs
+        this.posts.splice(0,1);
+
+        if(error instanceof BadInputError ){
+          //this.form.setError(error.originalError());
+        } else throw error;
+      });
   }
 
   /**
@@ -50,10 +62,8 @@ export class PostComponent implements OnInit {
    */
   updatePost(post){
     post.name = "sakthi";
-    this.postService.updatePosts(post)
-    .subscribe(data => {
-        console.log(data);
-    })
+    this.postService.update(post)
+    .subscribe(updatedPost =>  console.log(updatedPost));
   }
 
   /**
@@ -62,11 +72,21 @@ export class PostComponent implements OnInit {
    * @param post 
    */
   deletePost(post) {
-    this.postService.deletePostJson(post['id'])
-    .subscribe(data => {
-      let index = this.posts.indexOf(post);
-      this.posts.splice(index,1)
-      console.log('deleted')
-    })
+    let index = this.posts.indexOf(post);
+    this.posts.splice(index,1)
+
+    this.postService.deleteJson(post)
+    .subscribe(
+      () => {
+        console.log('deleted')
+      }, 
+      (error: AppError ) => {
+        //UI rollback
+        this.posts.splice(index, 0, post);
+
+        if(error instanceof NotFoundError ){
+          alert("This post already be deleted")
+        } else throw error;
+      });
   }
 }
