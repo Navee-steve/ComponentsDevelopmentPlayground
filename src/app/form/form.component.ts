@@ -1,6 +1,6 @@
 import { SimpleDialogComponent } from './../simple-dialog/simple-dialog.component';
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-form',
@@ -28,8 +28,10 @@ export class FormComponent implements OnInit {
    * if it was clicked as proceed it returns true if cancel clicked it returns nothing
    * 
    */
-  public openDialog = () => {
-    this.dialog.open(SimpleDialogComponent)
+  public openDialog = (formValue) => {
+    this.dialog.open(SimpleDialogComponent , {
+      data: formValue.value
+    })
     .afterClosed()
     .subscribe(result => console.log(result));
   }

@@ -16,5 +16,5 @@
     <!-- ngIf isusedto hide the component-->
     <!-- <button *ngIf = "firstName.valid" mat-raised-button color="primary" (click) = "openDialog()">Submit</button> -->
     <!--property biding is used to disable the button -->
-    <button mat-raised-button color="primary" [disabled] = "!templateFormVariable.valid" (click) = "openDialog()">Submit</button>
+    <button mat-raised-button color="primary" [disabled] = "!templateFormVariable.valid" (click) = "openDialog(templateFormVariable)">Submit</button>
 </form>

@@ -1,4 +1,16 @@
 <p>Whoaaa My dialog works Lets rock the world</p>
+<div>
+  <label for="firstName">FirstName</label>
+  <input id ="firstName"  class="form-control" 
+    type = "text" [value] = name disabled = true /> 
+</div>
+<div *ngIf = "comment">
+  <label for="comment">Comment Box</label>
+  <textarea id="comment" name = "comment" [value] = comment
+   type="text" 
+   class="form-control" cols="5" rows="3" disabled = true ></textarea>
+</div>
+<br>
 <mat-dialog-actions align="end">
     <button mat-button mat-dialog-close>Cancel</button>
     <!--once proceed button clicked it returns true you can proceed with that further-->

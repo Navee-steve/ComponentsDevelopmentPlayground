@@ -1,0 +1,5 @@
+.custom-chip-class{
+    padding-top: 10px;
+    display: flex;
+    overflow: auto;
+}

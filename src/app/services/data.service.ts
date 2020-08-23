@@ -37,6 +37,13 @@ export class DataService {
     );
   }
 
+  updateJson(resource){
+    return this.httpClient.put(this.jsonURL + '/' + resource.id , resource).pipe(
+        map(response => response),
+        catchError(this.errorHandler)
+    );
+  }
+
   delete(id){
   return this.httpClient.delete(this.rootURL + 'doOperation/' + id).pipe(
     map(response => response),

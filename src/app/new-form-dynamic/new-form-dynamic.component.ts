@@ -1,10 +1,15 @@
+import { fade } from './../animations/animations';
 import { Component } from '@angular/core';
 import { FormGroup, FormArray, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-new-form-dynamic',
   templateUrl: './new-form-dynamic.component.html',
-  styleUrls: ['./new-form-dynamic.component.css']
+  styleUrls: ['./new-form-dynamic.component.css'],
+  //Adding Animations
+  animations:[
+    fade
+  ]
 })
 export class NewFormDynamicComponent {
   form = new FormGroup({

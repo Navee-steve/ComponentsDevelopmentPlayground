@@ -4,10 +4,11 @@
     (keyup.enter) = "addTopic(topic)" #topic/>
     <div>
         <!-- *FormArray inside FormGroup fetch must be like below  -->
-        <ul class="list-group">
+        <ul class="list-group custom-width">
             <li 
             *ngFor = "let topic of topics['controls']"
-            class="list-group-item" (click) = "removeElement(topic)">
+            [title] = topic.value
+            class="list-group-item" (click) = "removeElement(topic)" @fade >
             {{ topic.value }}
         </li>
         </ul>        

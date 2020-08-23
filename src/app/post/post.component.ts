@@ -61,8 +61,8 @@ export class PostComponent implements OnInit {
    * @param post 
    */
   updatePost(post){
-    post.name = "sakthi";
-    this.postService.update(post)
+    post.email = "sakthi";
+    this.postService.updateJson(post)
     .subscribe(updatedPost =>  console.log(updatedPost));
   }
 

@@ -1,69 +1,81 @@
 <div class= "padding-class">
-<div class = "customClass">
-    <h2>
-        <span class = "label label-info">
-            {{title}}
-        </span>
-    </h2>
-    <h5>
-        <span class = "label label-success">
-            RATING COMPONENT
-        </span>
-    </h5>
-    <app-rating [isMaxScore] = "5" (ratingChanged) = "onRatingChanged($event)"></app-rating>
-    <h5>
-        <span class = "label label-success">
-            STAR COMPONENT
-        </span>
-    </h5>
-    <app-star></app-star>
-    <div>
-    <br>
-    <span class="p-input-icon-right">
-        <i class="pi pi-spin pi-spinner"></i>
-        <input type="text" pInputText [(ngModel)]="inputTyped" class="p-inputtext-lg" placeholder="Enter Text here..."/>        
-    </span>
-    <span>{{inputTyped | titleCase }}</span> 
-    </div>
-    <br>
-    <h5>
-        <span class = "label label-success">
-            LIKE COMPONENT
-        </span>
-    </h5>
-    <div>
-        <app-like [isActive] = "likeComponentEnum.isLiked" 
-            [likesCount] = "likeComponentEnum.likesCount" 
-            (onClickLike) = "onlikeClicked($event)"> 
-        </app-like>
-    </div>
-    <br>
-        <h5>
-            <span class = "label label-success">
-                MATERIAL UI ADDED
-            </span>
-    </h5>
-    <div>
-        <app-chip (click) = "onChipComponentClick($event)"></app-chip>
-    </div>
-    <br>
-        <h5>
-        <span class = "label label-success">
-            FORM LAYOUT
-        </span>
+    <div class = "customClass">
+
+        <!-- Adding tabs -->
+        <mat-tab-group>
+            <mat-tab label="Customized Components"> 
+                <h2>
+                    <span class = "label label-info">
+                        {{title}}
+                    </span>
+                </h2>
+                <h5>
+                    <span class = "label label-success">
+                        RATING COMPONENT
+                    </span>
+                </h5>
+                <app-rating [isMaxScore] = "5" (ratingChanged) = "onRatingChanged($event)"></app-rating>
+                <h5>
+                    <span class = "label label-success">
+                        STAR COMPONENT
+                    </span>
+                </h5>
+                <app-star></app-star>
+                <div>
+                <br>
+                <span class="p-input-icon-right">
+                    <i class="pi pi-spin pi-spinner"></i>
+                    <input type="text" pInputText [(ngModel)]="inputTyped" class="p-inputtext-lg" placeholder="Enter Text here..."/>        
+                </span>
+                <span>{{inputTyped | titleCase }}</span> 
+                </div>
+                <br>
+                <h5>
+                    <span class = "label label-success">
+                        LIKE COMPONENT
+                    </span>
+                </h5>
+                <div>
+                    <app-like [isActive] = "likeComponentEnum.isLiked" 
+                        [likesCount] = "likeComponentEnum.likesCount" 
+                        (onClickLike) = "onlikeClicked($event)"> 
+                    </app-like>
+                </div>
+            </mat-tab>
+            <mat-tab label="Material UI Designs"> 
+                <br>
+            <h5>
+                <span class = "label label-success">
+                    MATERIAL UI ADDED
+                </span>
         </h5>
-        <app-form></app-form>
+        <div>
+            <app-chip (click) = "onChipComponentClick($event)"></app-chip>
+        </div>
         <br>
-        <app-password-reset-form></app-password-reset-form>
-        <br>
-        <app-new-form-dynamic></app-new-form-dynamic>
-        <br>
-        <h5>
+            <h5>
             <span class = "label label-success">
-                Data Loaded from DB or from backend server
+                FORM LAYOUT
             </span>
             </h5>
-        <!-- <app-post></app-post> -->
-        <git-hub-followers></git-hub-followers>
-</div>
-</div>
+            <app-form></app-form>
+            <br>
+            <app-password-reset-form></app-password-reset-form>
+            </mat-tab>
+            <mat-tab label="DB FETCHING">
+                <h2>
+                    <span class = "label label-success">
+                        Data Loaded from DB or from backend server
+                    </span>
+                </h2>
+                <app-post></app-post>
+            </mat-tab>
+            <mat-tab label="Github followers">
+                <git-hub-followers></git-hub-followers>
+            </mat-tab>
+            <mat-tab label="To-Do List">
+                <app-new-form-dynamic></app-new-form-dynamic>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+    </div>
