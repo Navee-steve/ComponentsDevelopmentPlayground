@@ -27,6 +27,7 @@ import { PasswordResetFormComponent } from './password-reset-form/password-reset
 import { PostComponent } from './post/post.component';
 import { PostService } from './services/post.service';
 import { GitHubFollowersComponent } from './git-hub-followers/git-hub-followers.component';
+import { HeaderSectionComponent } from './header-section/header-section.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { GitHubFollowersComponent } from './git-hub-followers/git-hub-followers.
     NewFormDynamicComponent,
     PasswordResetFormComponent,
     PostComponent,
-    GitHubFollowersComponent
+    GitHubFollowersComponent,
+    HeaderSectionComponent
   ],
   //Dynamic components must be registered here to avoid compilation error but for our version it works fine
   entryComponents : [

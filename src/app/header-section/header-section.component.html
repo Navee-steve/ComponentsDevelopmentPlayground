@@ -1,0 +1,19 @@
+<div>
+    <div #templateFormVariable>
+        <br>
+        <br>
+        <div class = "horizontal-align">
+            <label > Enter Email Id to generate OTP </label>
+            <input 
+                type="text" 
+                class = "form-control input-width position-relative" 
+                [disabled]="valid" required/>
+            <br>
+        </div>
+        <button mat-raised-button color="primary" (click) = "makeOTPFetch(templateFormVariable.value)">Generate OTP</button>
+        <br>
+    </div>
+    <div>
+
+    </div>
+</div>

@@ -7,9 +7,11 @@ import {AppError} from './../common/app-error';
 //Added for getting catch method in observables
 import { map,catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class DataService {
+  Data:any;
 
   constructor(private httpClient: HttpClient ,private rootURL: string ,private jsonURL: string) { }
 
